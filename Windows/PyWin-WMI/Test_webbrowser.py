@@ -52,14 +52,15 @@ def stopWebBrowser(name = ProcessName):
 def main():
     count = 0
     urls = readUrls()
-    for url in urls:
-        count += 1
-        spawnWebBrowser(BrowserBinaryPath, url)
-        if count % 10 == 0:
-            time.sleep(10)
-            stopWebBrowser()
-    time.sleep(10)
-    stopWebBrowser()
+    while True:
+        for url in urls:
+            count += 1
+            spawnWebBrowser(BrowserBinaryPath, url)
+            if count % 10 == 0:
+                time.sleep(10)
+                stopWebBrowser()
+        time.sleep(10)
+        stopWebBrowser()
     jobCompleted = True
 
 if __name__ == "__main__":

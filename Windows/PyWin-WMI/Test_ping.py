@@ -36,12 +36,13 @@ def spawnPingTest(ping, host):
 def main():
     count = 0
     hosts = readHosts()
-    for host in hosts:
-        count += 1
-        spawnPingTest(PingBinaryPath, host)
-        if count % 10 == 0:
-            time.sleep(10)
-    time.sleep(10)
+    while True:
+        for host in hosts:
+            count += 1
+            spawnPingTest(PingBinaryPath, host)
+            if count % 10 == 0:
+                time.sleep(10)
+        time.sleep(10)
     jobCompleted = True
 
 if __name__ == "__main__":

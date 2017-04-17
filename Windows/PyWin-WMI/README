@@ -1,0 +1,5 @@
+=== Installation ===
+
+1. Install Python-2.7 windows executable
+2. run 'pip install wmi'
+3. run 'pip install pywin' or 'pip install pypiwin32'
